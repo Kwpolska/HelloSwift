@@ -275,6 +275,7 @@
 				E52FA80D1D75CE91003FC4A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,4 +7,6 @@ displays it in a label below, and also identifies whether the user pressed
 
 It’s not perfect, but it works.
 
+See also: [Hello, Objective-C!](https://github.com/Kwpolska/HelloObjectiveC)
+
 ![Screenshot](https://github.com/Kwpolska/HelloSwift/raw/master/screenshot.png)

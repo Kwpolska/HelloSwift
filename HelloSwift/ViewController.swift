@@ -21,16 +21,16 @@ class ViewController: NSViewController {
     }
 
     func updateLabelWithFormat(text: String, emoji: String) -> Bool {
-        if textField.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).isEmpty {
+        if text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).isEmpty {
             label.stringValue = "Hello! " + emoji;
             return false
         } else {
-            label.stringValue = String.init(format: "Hello, %@! %@", textField.stringValue, emoji);
+            label.stringValue = String.init(format: "Hello, %@! %@", text, emoji);
             return true
         }
     }
 
-    func showHelp(sencer: AnyObject?) {
+    func showHelp(sender: AnyObject?) {
         let alert: NSAlert = NSAlert()
         alert.messageText = "Just type in a name and hit Return/Greet."
         alert.informativeText = "That’s all there is to know."
