@@ -12,30 +12,28 @@ class ViewController: NSViewController {
     @IBOutlet var textField: NSTextField!
     @IBOutlet var label: NSTextField!
     
-    @IBAction func textFieldHitEnter(sender: NSTextField) {
+    @IBAction func textFieldHitEnter(_ sender: NSTextField) {
         updateLabelWithFormat(sender.stringValue, emoji: "⌨️")
     }
     
-    @IBAction func greetPressed(sender: NSButton) {
+    @IBAction func greetPressed(_ sender: NSButton) {
         updateLabelWithFormat(textField.stringValue, emoji: "🖱")
     }
 
-    func updateLabelWithFormat(text: String, emoji: String) -> Bool {
-        if text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).isEmpty {
+    func updateLabelWithFormat(_ text: String, emoji: String) {
+        if text.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty {
             label.stringValue = "Hello! " + emoji;
-            return false
         } else {
             label.stringValue = String.init(format: "Hello, %@! %@", text, emoji);
-            return true
         }
     }
 
-    func showHelp(sender: AnyObject?) {
+    func showHelp(_ sender: AnyObject?) {
         let alert: NSAlert = NSAlert()
         alert.messageText = "Just type in a name and hit Return/Greet."
         alert.informativeText = "That’s all there is to know."
-        alert.alertStyle = NSAlertStyle.InformationalAlertStyle
-        alert.addButtonWithTitle("OK")
+        alert.alertStyle = NSAlertStyle.informational
+        alert.addButton(withTitle: "OK")
         alert.runModal()
     }
     
@@ -46,7 +44,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
